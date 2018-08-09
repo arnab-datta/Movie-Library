@@ -1,0 +1,387 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Main Page -->
+  <div data-role="page" id="pageone" data-theme="c" data-dialog="true" data-close-btn="none">
+    <div data-role="header" id="hed">
+      <a href="#addpage" class="ui-btn-right" data-icon="plus">Add New</a>
+      <h1>Movie Wiki</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+      <form class="ui-filterable">
+        <input id="dta" data-type="search" placeholder="Search...">
+      </form>
+      <ul data-role="listview" data-filter="true" data-input="#dta" id="dt" data-inset="true" data-theme="b">
+      </ul>
+    </div>
+  </div>
+
+  <!-- Add Page  -->
+  <div data-role="page" id="addpage" data-theme="c" data-dialog="true">
+    <div data-role="header" id="hed">
+      <h1>Movie Wiki</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+      <a href="#addmovie" class="ui-btn-right" data-icon="plus">Add Movie</a>
+      <a href="#addsong" class="ui-btn-left" data-icon="plus">Add Song</a>
+    </div>
+  </div>
+
+  <!-- Movie Details page -->
+  <div data-role="page" id="page2" data-theme="a" data-dialog="true">
+    <div data-role="header" id="hed">
+      <a href="#pageone" data-transition="slide" data-direction="reverse" data-icon="back" onclick="parent.location.reload();">Back</a>
+      <h1 id="mvn"></h1>
+    </div>
+    <div data-role="main" class="ui-content" id="pg2">
+      <img src="images/" id="ig" style="float: right;padding:1px;
+      border:1px solid;height: 300px;width: 200px">
+      <h2>Director</h2>
+      <h4 id="dr"></h4>
+      <h2>Producer</h2>
+      <h4 id="prd"></h4>
+      <h2>Story By</h2>
+      <h4 id="str"></h4>
+      <h2>Starring</h2>
+      <h4 id="cst"></h4>
+      <h2>Release Date</h2>
+      <h4 id="rldt"></h4>
+      <h2>Music Director</h2>
+      <h4 id="mudr"></h4>
+      <h2>Songs</h2>
+      <ul data-role="listview" id="sngg" data-inset="true" data-theme="b">
+      </ul>
+    </div>
+  </div>
+
+  <!-- Song Details page -->
+  <div data-role="page" id="page3" data-theme="a" data-dialog="true">
+    <div data-role="header" id="hed">
+      <a href="#pageone" data-transition="slide" data-direction="reverse" data-icon="back" onclick="parent.location.reload();">Back</a>
+      <h1 id="sng"></h1>
+    </div>
+    <div data-role="main" class="ui-content" id="pg3">
+      <h2>Movie name</h2>
+      <h4 id="mvnn"></h4>
+      <h2>Artists</h2>
+      <h4 id="arts"></h4>
+      <audio controls loop>
+        <source src="" id="aud">
+      </audio>
+      <h2>Lyrics</h2>
+      <textarea id="lrcs" cols="100" rows="100" readonly style="resize: none"></textarea>
+    </div>
+  </div>
+  <!-- Add New Movie Page -->
+  <div data-role="page" id="addmovie" data-theme="b" data-dialog="true">
+    <div data-role="header" id="hed">
+      <a href="#pageone" data-transition="slide" data-direction="reverse" data-icon="back" onclick="parent.location.reload();">Back</a>
+      <h1>Add New Movie</h1>
+    </div>
+    <div data-role="main" class="ui-content" style="background: #5d9ab2 ">
+      <div class="addtoast">Record Added successfully.</div>
+      <style type="text/css">
+        .addtoast {
+          background: rgb(13, 68, 141);
+          width: 35%;
+          padding: 5px;
+          border-radius: 360px;
+          text-align: center;
+          color: #FFF;
+          display: none;
+          position: fixed;
+          bottom: 5px;
+          margin: 0px auto;
+        }
+      </style>
+      <div class="checktoast">Please Enter all the details</div>
+      <style type="text/css">
+        .checktoast {
+          background: red;
+          width: 35%;
+          padding: 5px;
+          border-radius: 360px;
+          text-align: center;
+          color: #FFF;
+          display: none;
+          position: fixed;
+          bottom: 5px;
+          margin: 0px auto;
+        }
+      </style>
+
+      <form action="" method="POST" id="frm" enctype="multipart/form-data">
+        <p class="fd">Movie Name</p>
+        <p>
+          <input type="text" name="movname" id="movname">
+        </p>
+        <p class="fd">Director</p>
+        <p>
+          <input type="text" name="dir" id="dir">
+        </p>
+        <p class="fd">Producer</p>
+        <p>
+          <input type="text" name="pro" id="pro">
+        </p>
+        <p class="fd">Story By</p>
+        <p>
+          <input type="text" name="story" id="story">
+        </p>
+        <p class="fd">Starring</p>
+        <p>
+          <input type="text" name="cast" id="cast">
+        </p>
+        <p class="fd">Release Date</p>
+        <p>
+          <input type="text" name="rlsdt" id="rlsdt">
+        </p>
+        <p class="fd">Music Director</p>
+        <p>
+          <input type="text" name="musdir" id="musdir">
+        </p>
+        <p class="fd">Image</p>
+        <p>
+          <input type="file" id="files" name="files">
+        </p>
+        <p style="text-align: center">
+          <input type="button" id="addbtn" value="Add">
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add New Song Page -->
+  <div data-role="page" id="addsong" data-theme="b" data-dialog="true">
+    <div data-role="header" id="hed">
+      <a href="#pageone" data-transition="slide" data-direction="reverse" data-icon="back" onclick="parent.location.reload();">Back</a>
+      <h1>Add New Song</h1>
+    </div>
+    <div data-role="main" class="ui-content" style="background: #5d9ab2 ">
+      <div class="addtoast">Record Added successfully.</div>
+      <style type="text/css">
+        .addtoast {
+          background: rgb(13, 68, 141);
+          width: 35%;
+          padding: 5px;
+          border-radius: 360px;
+          text-align: center;
+          color: #FFF;
+          display: none;
+          position: fixed;
+          bottom: 5px;
+          margin: 0px auto;
+        }
+      </style>
+      
+      <div class="checktoast">Please Enter all the details</div>
+      <style type="text/css">
+        .checktoast {
+          background: red;
+          width: 35%;
+          padding: 5px;
+          border-radius: 360px;
+          text-align: center;
+          color: #FFF;
+          display: none;
+          position: fixed;
+          bottom: 5px;
+          margin: 0px auto;
+        }
+      </style>
+      <form action="" method="POST" id="songfrm" enctype="multipart/form-data">
+        <p class="fd">Song Name</p>
+        <p>
+          <input type="text" name="songname" id="songname">
+        </p>
+        <p class="fd">Movie Name</p>
+        <p>
+          <input type="text" name="mvname" id="mvname">
+        </p>
+        <p class="fd">Singers</p>
+        <p>
+          <input type="text" name="ars" id="ars">
+        </p>
+        <p class="fd">Lyrics</p>
+        <p>
+          <textarea name="lrc" id="lrc" rows="100" cols="100"></textarea>
+        </p>
+        <p>
+          <input type="file" id="songfile" name="songfile">
+        </p>
+        <p style="text-align: center">
+          <input type="button" id="sngadbtn" value="Add">
+        </p>
+      </form>
+    </div>
+  </div>
+  <script type="text/javascript">
+    // Add New  Movie
+    $('#addbtn').click(function () {
+      var mn = document.getElementById('movname').value;
+      var dr = document.getElementById('dir').value;
+      var pd = document.getElementById('pro').value;
+      var st = document.getElementById('story').value;
+      var ct = document.getElementById('cast').value;
+      var rd = document.getElementById('rlsdt').value;
+      var md = document.getElementById('musdir').value;
+      if (mn == '' || dr == '' || pd == '' || st == '' || ct == '' || rd == '' || md == '') {
+        $('.checktoast').fadeIn(1000);
+        setTimeout(function () {
+          $('.checktoast').fadeOut(1000);
+        }, 2000);
+      } else {
+        var form = $('#frm')[0];
+        var data = new FormData(form);
+        $.ajax({
+          type: "POST",
+          enctype: 'multipart/form-data',
+          url: 'addmovie.php',
+          dataType: "json",
+          data: data,
+          processData: false,
+          contentType: false,
+          cache: false,
+          timeout: 600000,
+          success: function (result) {
+            document.getElementById("frm").reset();
+            $('.addtoast').fadeIn(1000);
+            setTimeout(function () {
+              $('.addtoast').fadeOut(1000);
+              $.mobile.changePage("#addmovie", {
+                transition: "slide",
+                changeHash: false
+              });
+            }, 2000);
+          },
+          error: function (request, error) {
+            alert('Network error has occurred please try again!');
+          }
+        });
+      }
+    });
+    // Add New Song 
+    $('#sngadbtn').click(function () {
+      var sn = document.getElementById('songname').value;
+      var mvvn = document.getElementById('mvname').value;
+      var ast = document.getElementById('ars').value;
+      var lrc = document.getElementById('lrc').value;
+      if (sn == '' || mvvn == '' || ast == '' || lrc == '') {
+        $('.checktoast').fadeIn(1000);
+        setTimeout(function () {
+          $('.checktoast').fadeOut(1000);
+        }, 2000);
+      } else {
+        var form = $('#songfrm')[0];
+        var data = new FormData(form);
+        $.ajax({
+          type: "POST",
+          url: 'addsong.php',
+          data: data,
+          enctype: 'multipart/form-data',
+          processData: false,
+          contentType: false,
+          cache: false,
+          timeout: 600000,
+          success: function (result) {
+            document.getElementById("songfrm").reset();
+            $('.addtoast').fadeIn(1000);
+            setTimeout(function () {
+              $('.addtoast').fadeOut(1000);
+              $.mobile.changePage("#addsong", {
+                transition: "slide",
+                changeHash: false
+              });
+            }, 2000);
+          },
+          error: function (request, error) {
+            alert('Network error has occurred please try again!');
+          }
+        });
+      }
+    });
+
+    // Regular Expression
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // List view  of Movie on first #pageone 
+    $.getJSON("json.php", function (data) {
+      $.each(data, function (key, val) {
+        $("#dt").append("<li><a href='#page2?mvn=" + val.Movie_name + "&dr=" + val.Director +
+          "&prd=" + val.Producer + "&str=" + val.Story_by + "&cst=" + val.Starring + "&rldt=" + val.Release_date +
+          "&mudr=" + val.Music_director + "&ig=" + val.Bgimg +
+          "' data-transition='slide'><img src='images/" + val.Bgimg +
+          "' style='border-radius: 50%; width:200px'>" + val.Movie_name +
+          "</a></li>");
+      });
+      $('#dt').listview('refresh');
+    });
+
+    // Details of movie in #Page2
+    $(document).on("pagecontainerbeforetransition", function (e, data) {
+      if ($.type(data.toPage) !== "undefined" && $.type(data.absUrl) !== "undefined" && data.toPage[0].id ==
+        "page2") {
+        var mvn = getParameterByName('mvn', data.absUrl);
+        var dr = getParameterByName('dr', data.absUrl);
+        var prd = getParameterByName('prd', data.absUrl);
+        var str = getParameterByName('str', data.absUrl);
+        var cst = getParameterByName('cst', data.absUrl);
+        var rldt = getParameterByName('rldt', data.absUrl);
+        var mudr = getParameterByName('mudr', data.absUrl);
+        var ig = getParameterByName('ig', data.absUrl);
+        document.getElementById("mvn").innerHTML = mvn;
+        document.getElementById("dr").innerHTML = dr;
+        document.getElementById("prd").innerHTML = prd;
+        document.getElementById("str").innerHTML = str;
+        document.getElementById("cst").innerHTML = cst;
+        document.getElementById("rldt").innerHTML = rldt;
+        document.getElementById("mudr").innerHTML = mudr;
+        document.getElementById('ig').src = "images/".concat(ig);
+
+        // List view  of Song in  #page2 of the particular movie
+        $.getJSON("jsong.php?mvn=" + mvn, function (data) {
+          $.each(data, function (key, val) {
+            $("#sngg").append("<li><a href='#page3?sng=" + val.Song_name + "&mvnn=" + val.Movie_name +
+              "&arts=" + val.Artists + "&aud=" + val.Audio + "&lrcs=" + val.Lyrics +
+              "' data-transition='slide'>" +
+              val.Song_name + "</a></li>");
+          });
+          $('#sngg').listview('refresh');
+        });
+      }
+    });
+
+    // Details of Song in #Page3
+    $(document).on("pagecontainerbeforetransition", function (e, data) {
+      if ($.type(data.toPage) !== "undefined" && $.type(data.absUrl) !== "undefined" && data.toPage[0].id ==
+        "page3") {
+        var sng = getParameterByName('sng', data.absUrl);
+        var mvnn = getParameterByName('mvnn', data.absUrl);
+        var arts = getParameterByName('arts', data.absUrl);
+        var lrcs = getParameterByName('lrcs', data.absUrl);
+        var aud = getParameterByName('aud', data.absUrl);
+        document.getElementById("sng").innerHTML = sng;
+        document.getElementById("mvnn").innerHTML = mvnn;
+        document.getElementById("arts").innerHTML = arts;
+        document.getElementById("lrcs").innerHTML = lrcs;
+        document.getElementById("aud").src = "songs/".concat(aud);
+      }
+    });
+  </script>
