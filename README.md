@@ -1,6 +1,33 @@
 # MOVIE-LIBRARY
  > A web app that enables to know movie details and also insert the same into the database.
 
+## APPLICATION SCREENSHOTS
+
+#### MAIN PAGE (list-view of movies)                                 
+![Movie Home](/srsh/MovieHome.PNG)                              
+
+#### MOVIE DETAILS                                                               
+![Movie Details 1](/srsh/MovieDetails1.PNG)                                     
+![Movie Details 2](/srsh/MovieDetails2.PNG) 
+
+####   SONG DETAILS 
+![Song Details](/srsh/SongDetails.PNG)
+
+#### ADDING DATA
+![Data Add](/srsh/MovieAdd.PNG)
+
+#### ADDING MOVIE
+![Add Movie](/srsh/AddMovie.PNG) 
+
+#### ADDING SONG
+![Add Song](/srsh/AddSong.PNG) 
+
+#### TOAST ON ADDING SUCCESSFULLY
+![Success Toast](/srsh/SuccessToast.png)
+
+#### TOAST ON ADDING WITH EMPTY FIELDS
+![Fail Toast](/srsh/FailToast.png)
+
 ## ABSTRACT
 
 This report details the work done towards the project Movie Library. This particular project has been developed to know movie details by just a single click through Internet.<br>
@@ -52,22 +79,22 @@ To develop an efficient Movie Library System with front end web interface and ba
 * JQUERY
 
 ##### XAMPP Server
-XAMPP is a free and open source cross-platform web server solution stack package developed by Apache Friends consisting mainly of the Apache HTTP Server, MariaDB database, and interpreters for scripts written in the PHP and Perl programming languages. XAMPP stands for Cross-Platform (X), Apache (A), MariaDB (M), PHP (P) and Perl (P). It is a simple, lightweight Apache distribution that makes it extremely easy for developers to create a local web server for testing and deployment purposes.
+    XAMPP is a free and open source cross-platform web server solution stack package developed by Apache Friends consisting mainly of the Apache HTTP Server, MariaDB database, and interpreters for scripts written in the PHP and Perl programming languages. XAMPP stands for Cross-Platform (X), Apache (A), MariaDB (M), PHP (P) and Perl (P). It is a simple, lightweight Apache distribution that makes it extremely easy for developers to create a local web server for testing and deployment purposes.
 
 ##### HTML
-HTML stands for Hyper Text Markup Language. It is computer language devised to allow website creation. These websites can then be viewed by anyone else connected to the internet. It is relatively easy to learn, with the basics being accessible to most people in one sitting and quite powerful in what it allows you to create. It is constantly undergoing revision and evolution to meet the demands and requirements of the growing internet audience under the direction of the W3C, the organisation charged with designing and maintaining the language.
+    HTML stands for Hyper Text Markup Language. It is computer language devised to allow website creation. These websites can then be viewed by anyone else connected to the internet. It is relatively easy to learn, with the basics being accessible to most people in one sitting and quite powerful in what it allows you to create. It is constantly undergoing revision and evolution to meet the demands and requirements of the growing internet audience under the direction of the W3C, the organisation charged with designing and maintaining the language.
 
 ##### CSS
-Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language. CSS is designed primarily to enable the separation of presentation and content, including aspects such as the layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple HTML pages to share formatting by specifying the relevant CSS in a separate .css file.
+    Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language. CSS is designed primarily to enable the separation of presentation and content, including aspects such as the layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple HTML pages to share formatting by specifying the relevant CSS in a separate .css file.
 
 ##### JavaScript
-JavaScript often abbreviated as JS, is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm. JS enables interactive web pages and thus is an essential part of web applications. The vast majority of websites use it.
+    JavaScript often abbreviated as JS, is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm. JS enables interactive web pages and thus is an essential part of web applications. The vast majority of websites use it.
 
 ##### AJAX
-Ajax short for “Asynchronous JavaScript And XML” is a set of Web development techniques using many Web technologies on the client side to create asynchronous Web applications can send and retrieve data from a server without interfering with the display and behavior of the existing page. Ajax is not a single technology, but rather a group of technologies. HTML and CSS can be used in combination to mark up and style information.
+    Ajax short for “Asynchronous JavaScript And XML” is a set of Web development techniques using many Web technologies on the client side to create asynchronous Web applications can send and retrieve data from a server without interfering with the display and behavior of the existing page. Ajax is not a single technology, but rather a group of technologies. HTML and CSS can be used in combination to mark up and style information.
 
 ##### JQUERY
-JQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. It is free, open-source software using the permissive MIT License. jQuery’s syntax is designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications. JQuery Mobile is a UI framework geared to mobile applications that is built on jQuery.
+    JQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. It is free, open-source software using the permissive MIT License. jQuery’s syntax is designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications. JQuery Mobile is a UI framework geared to mobile applications that is built on jQuery.
 
 
 ## ENTITY  RELATIONSHIP  DIAGRAM
@@ -76,4 +103,19 @@ JQuery is a cross-platform JavaScript library designed to simplify the client-si
 
 ## DATA  FLOW  DIAGRAM
 
+![DFD 0 Diagram](/srsh/DFDLevel0.png)
+![DFD 1 Diagram](/srsh/DFDLevel1.png)
+
+
+
+## CONCLUSION
+
+* The purpose of Movie Library is to make the tiring search of movie information much delightful and easier.
+* This system is user-friendly and helpful at the same time.
+* People can know about their favorite movies any time just by a single click.
+* The user can enter data as well as seek data.
+* Movie along with its soundtrack details are available.
+* An image is attached with the movies for better look.
+* There is no login, so anyone can enter data both for movies and songs.
+* Our goal is to provide all the movie lovers out there a wonderful experience of knowing about any movie at any time. 
 
